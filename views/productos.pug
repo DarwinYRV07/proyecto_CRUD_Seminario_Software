@@ -1,0 +1,35 @@
+extends base.pug
+
+block title 
+    title Productos
+
+block container
+    h1 Producto
+    p Se necesita recargar la pagina para que imprima  los datos de las tablas. 
+    hr
+    .d-grid.gap-2
+        a.btn.btn-success.mt-2(href="/nuevoproducto") Nuevo Producto
+    table.table.mt-4
+        thead
+            tr
+                th id
+                th Nombre Producto
+                th Descripcion
+                th Precio
+                th Cantidad 
+                th Opciones
+                
+        tbody
+            each value in datos
+                tr
+                    td #{value.idproducto}
+                    td #{value.nombreproducto}
+                    td #{value.descripcionproducto}
+                    td #{value.precioproducto}
+                    td #{value.cantidadproducto}
+                    td 
+                        a.btn.btn-success.mt-2(href="/editarproductoid"/*+"{id:#{value.idproducto}}"*/) Editar
+                    td
+                        a.btn.btn-warning.mt-2(href="") Eliminar 
+        .d-grid.gap-2
+            a.btn.btn-danger.mt-2(href="/") Regresar

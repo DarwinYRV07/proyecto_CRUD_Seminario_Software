@@ -1,0 +1,19 @@
+extends base.pug
+
+block title 
+    title Editar Categoria 
+
+block container 
+     .container.mt-5(style={width:'350px'})
+        h2.text-center Editar Categoria
+        hr
+        form(action="/editarcategoria" method="post")
+            .form-group
+                label(for="nombrecategoria") Nombre de la categoria 
+                input#nombrecategoria.form-control(type="text" name='nombrecategoria')
+
+            .form-group.mt-2
+                .d-grid.gap-2
+                    button.btn.btn-primary Actualizar Datos
+                .d-grid.gap-2
+                    a.btn.btn-success.mt-2(href="/categorias") Regresar

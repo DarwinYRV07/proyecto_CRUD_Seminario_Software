@@ -1,0 +1,29 @@
+extends base.pug
+
+block head 
+
+block title 
+    title Nueva Categoria 
+
+block container 
+    .container.mt-5(style={width:'350px'})
+    
+        //- h2.text-center Categorias Existentes
+        //- hr
+        //- table
+        //-     hd id
+        //-     hd categoria 
+            //- p aqui listado: #{listadocategoria[0]}
+
+        h2.text-center Registro de Categoria
+        hr
+        form(action="/nuevocategoria" method="post")
+            .form-group
+                label(for="nombrecategoria") Nombre de la categoria 
+                input#nombrecategoria.form-control(type="text" name='nombrecategoria')
+
+            .form-group.mt-2
+                .d-grid.gap-2
+                    button.btn.btn-primary Guardar
+                .d-grid.gap-2
+                    a.btn.btn-success.mt-2(href="/categorias") Regresar

@@ -1,0 +1,33 @@
+extends base.pug
+
+block head 
+
+block title 
+    title Nuevo Producto 
+
+block container 
+    .container.mt-5(style={width:'350px'})
+        h1.text-center Registro de Productos
+        hr
+        form(action="/nuevoproducto" method="post")
+            .form-group
+                label(for="nombreproducto") Nombre del producto 
+                input#nombreproducto.form-control(type="text" name='nombreproducto')
+
+            .form-group.mt-2
+                label(for="descripcionproducto") Descripcion del Producto
+                input#descripcionproducto.form-control(type="text" name='descripcionproducto')
+
+            .form-group.mt-2
+                label(for="precioproducto") Precio del Producto 
+                input#precioproducto.form-control(type="number" name='precioproducto')
+            
+            .form-group.mt-2
+                label(for="cantidadproducto") Cantidad del Producto 
+                input#cantidadproducto.form-control(type="number" name='cantidadproducto')
+    
+            .form-group.mt-2
+                .d-grid.gap-2
+                    button.btn.btn-primary Guardar
+                .d-grid.gap-2
+                    a.btn.btn-success.mt-2(href="/productos") Regresar

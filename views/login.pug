@@ -1,0 +1,20 @@
+extends base.pug
+
+block title 
+  title Sing In
+
+block head
+  link(rel='stylesheet' href='css/signin.css')
+
+block container
+  main.form-signin.text-center
+    form.text(action="/login",method="post")  
+      h1.h3.mb-3.fw-normal Please sign in
+      .form-floating
+        input#username.form-control(type='text' placeholder='UserName' name="username")
+        label(for='username') UserName
+      .form-floating
+        input#password.form-control(type='password' placeholder='Password' name="password")
+        label(for='paswordd') Password
+      button.w-100.btn.btn-lg.btn-primary(type='submit') Sign in
+      a.w-100.btn.btn-lg.btn-success.mt-1(href='/register') Register

@@ -1,0 +1,29 @@
+extends base.pug
+
+block title 
+    title Categorias 
+
+block container
+    h1 Categorias
+    p Se necesita recargar la pagina para que imprima  los datos de las tablas. 
+    hr
+    .d-grid.gap-2
+        a.btn.btn-success.mt-2(href="/nuevocategoria") Nueva Categoria
+    table.table.mt-4
+        thead
+            tr
+                th id
+                th Nombre 
+                th Opciones
+        tbody
+            each value in datos
+                tr
+                    td #{value.idcategoria}
+                    td #{value.nombrecategoria}
+                    td 
+                        a.btn.btn-success.mt-2(href="/editarcategoriaid"/*+"{id:#{value.idcategoria}}"*/) Editar
+                    td 
+                        a.btn.btn-warning.mt-2(href='/'/*"/categorias:'#{value.idcategoria}/borrarcategoria*/) Eliminar
+                        
+        .d-grid.gap-2
+            a.btn.btn-danger.mt-2(href="/") Regresar

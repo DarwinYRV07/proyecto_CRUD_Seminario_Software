@@ -1,0 +1,19 @@
+extends base.pug
+
+block title 
+  title Dashboard
+  
+
+block container
+  .container.mt-5(style={width:'350px'})
+    h1.text-center Welcome to DashBoard
+    p Hola #{user.fullname}
+
+    p #{producto}
+    hr
+    .d-grid.gap-2
+      a.btn.btn-success.mt-2(href="/productos")  Producto
+    .d-grid.gap-2
+      a.btn.btn-success.mt-2(href="/categorias")  Categoria
+    .d-grid.gap-2
+      a.btn.btn-danger.mt-5(href="/logout") Logout
